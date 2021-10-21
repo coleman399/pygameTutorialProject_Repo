@@ -1,0 +1,61 @@
+how to download pygame:
+
+1. open command prompt
+2. type: pip install pygame
+    *** if pip is not recognized as an internal or external command do this:
+        source: https://appuals.com/fix-pip-is-not-recognized-as-an-internal-or-external-command/
+        Method 1
+        1. Press Windows key + R to open up a Run dialog box. Then, type “cmd” and press Enter to open up Command Prompt.
+        2. Inside the command prompt window, type echo %PATH% and press Enter to get a listing with all locations added to the PATH variable
+        3. If you manage to find a path similar to C:\Python37\Scripts (this depends on your Python version), it means that the installation 
+           path is already added to your PATH variable. In this case, you can skip next two methods below and jump straight to Method 4 where 
+           we start troubleshooting for problems related to the PiP installation path.
+        Method 2
+        1. Press Windows key + R to open up a Run dialog box. Then, type “sysdm.cpl” and press Enter to open up the System Properties screen.
+        2. Inside the System Properties screen, go to the Advanced tab, then click on Environment Variables.
+        3. In the Environment Variables screen, go to System variables and click on Path to select it. Then with the Path selected, click the 
+           Edit… button.
+        4. In the Edit environment variable screen, click on New and add the path where the PiP installation is located. For Python 3.4, the 
+           default location is C:\Python34\Scripts.
+        5. Once the path is added, open a fresh CMD window and try to install a python package that comes with PiP. You should no longer see 
+           the “pip is not recognized as an internal or external command” error.
+        Method 3 
+        1. Press Windows key + R to open up a Run dialog box. Then, type “cmd” and press Enter to open a Command Prompt window.
+        2. In the Command Prompt window, run the following command to set the PIP installation to the environment variable:
+           setx PATH “%PATH%;C:\Python37\Scripts”
+        3. See if this method was successfully by running a Python installation package (one that uses PIP) from the same CMD window. If 
+           you’re still encountering the error message, move down to the next method below.
+        Method 4
+        The Short Method
+        1. Press Windows key + R to open up a Run dialog box. Then, type “cmd” and press Enter to open a Command Prompt Window.
+        2. Type the following commands and make sure to change the placeholder to your own package name:
+        python -m pip install pygame
+        The Long Method
+        1. Open a Run dialog box by pressing Windows key + R. Then, type “cmd” and hit Enter to open a Command Prompt window.
+        2. In the CMD window, use the following command to navigate to the directory where the python .whl file is located:
+           cd C:\python installs
+        3. Next, run the following command to install the Python package using PiP:
+           c:\python37\scripts\pip.exe install [package].whl
+        Method 5
+        1. Press Windows key + R to open up a Run dialog box. Then, type “appwiz.cpl” and press Enter to open Programs and Features.
+        2. Inside Programs and Features, right-click on the Python installation and click Change.
+        3. At the Modify Setup screen, click on Modify
+        4. In the Optional Features screen, check the box associated with pip and click Next.
+        5. Hit the Install button to make the changes to the Python installation.
+        6. Once the Python installation is modified, open a CMD window and see if you’re able to install a Python package with PiP without 
+           seeing the “pip is not recognized as an internal or external command” error.
+        Method 6
+        1. Press Windows key + R to open up a Run dialog box. Then, type “appwiz.cpl” and press Enter to open Programs and Features.
+        2. Inside Programs and Features, scroll down to the programs list to find the Python installation. Once you find it, right-click on it 
+           and choose Uninstall, then follow the on-screen prompts to remove it from your system. Once the Python distribution is removed from 
+           your computer, restart your machine.
+        3. At the next startup, visit this link (here) and download the latest Python executable installer according to your Os architecture.
+        4. Open the installation executable and start by making sure that the box associated with Add Python to PATH is checked – This ensures 
+           that you can run Python commands in Command Prompt. Then, click on Customize installation.
+        5. Open the installation executable and start by making sure that the box associated with Add Python to PATH is checked – This ensures 
+           that you can run Python commands in Command Prompt. Then, click on Customize installation.
+        6. Leave the default location and Advanced Options, then click Install to commence the installation.
+        7. Once the installation is complete, restart your computer manually if you’re not automatically prompted to do so.
+        8. At the next startup, see if the issue has been resolved by trying to install a Python package via a CMD window.
+        9. If you’re still seeing the “pip is not recognized as an internal or external command” error, type the following command in a CMD window:
+           python -m ensurepip --default-pip
